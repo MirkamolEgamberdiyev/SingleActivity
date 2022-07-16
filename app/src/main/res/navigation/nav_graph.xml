@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    tools:ignore="InvalidNavigation"
+    app:startDestination="@id/splashFragment3">
+
+    <action
+        android:id="@+id/action_global_loginFlowFragment"
+        app:destination="@id/loginFlowFragment"
+        app:popUpTo="@id/nav_graph" />
+
+    <action
+        android:id="@+id/action_global_mainFlowFragment"
+        app:destination="@id/mainFlowFragment"
+        app:popUpTo="@id/nav_graph" />
+
+    <fragment
+        android:id="@+id/mainFlowFragment"
+        android:name="com.mirkamol.android_sass.fragment.main.MainFlowFragment"
+        android:label="flow_fragment_main"
+        tools:layout="@layout/fragment_main_flow" />
+
+    <fragment
+        android:id="@+id/loginFlowFragment"
+        android:name="com.mirkamol.android_sass.fragment.auth.LoginFlowFragment"
+        android:label="flow_fragment_sign"
+        tools:layout="@layout/fragment_login_flow" />
+    <fragment
+        android:id="@+id/splashFragment3"
+        android:name="com.mirkamol.android_sass.fragment.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment3_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment" />
+        <action
+            android:id="@+id/action_splashFragment3_to_loginFlowFragment"
+            app:destination="@id/loginFlowFragment" />
+    </fragment>
+</navigation>
